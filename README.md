@@ -1,6 +1,7 @@
 # Vulnerable-Web-Server-Traffic-Analysis-Lab
 
-**Objective**
+## Objective
+
 Perform an investigation of malicious network traffic targeting a vulnerable web server to determine:
 - The source of the compromise
 - The attack method used
@@ -8,13 +9,13 @@ Perform an investigation of malicious network traffic targeting a vulnerable web
 - Security improvements to prevent future attacks
 Analysis was conducted in Kibana using Packetbeat logs and a forensic review of Lab2webdirectory.tar.gz, extracted from the web root directory.
 
-**Tools & Environment**
+## Tools & Environment
 - Kibana (ELK Stack)
 - Packetbeat Logs
 - Linux Log Files
 - Extracted Web Directory Archive (Lab2webdirectory.tar.gz)
 
-**Investigation Methodology**
+## Investigation Methodology
 A structured investigation process was followed:
 
 **1. Network Analysis**
@@ -111,6 +112,33 @@ Specifically:
 - Publicly accessible debug file
 - Hardcoded credentials
 - Lack of environment separation
-****
 
-****
+## Remediation & Recommendations
+**Immediate Actions**
+| Action                                   | Purpose                        |
+| ---------------------------------------- | ------------------------------ |
+| Delete /debug directory                | Remove exposed sensitive files |
+| Change webserver password                | Invalidate leaked credentials  |
+| Restrict SSH to key-based authentication | Prevent password-based attacks |
+| Isolate and reimage server               | Ensure clean system state      |
+
+## Long-Term Security Improvements
+- Apply the Principle of Least Privilege for service accounts.
+- Separate development and production environments.
+- Enable:
+    - Web Application Firewall (WAF)
+    - Intrusion Detection System (IDS)
+- Regularly scan for exposed debug/config files.
+- Implement centralized logging and SIEM monitoring.
+- Enforce secure configuration management practices.
+
+## Conclusion
+The investigation confirmed that attacker IP 192.168.36.198 exploited an exposed debug file containing valid SSH credentials.
+
+The compromise was not due to code injection but rather credential misuse resulting from poor deployment hygiene.
+
+This lab demonstrates the importance of:
+- Removing development artifacts before production deployment
+- Protecting credentials
+- Enforcing secure configuration management
+- Maintaining centralized monitoring for early detection
