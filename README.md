@@ -137,6 +137,14 @@ The investigation confirmed that attacker IP 192.168.36.198 exploited an exposed
 
 The compromise was not due to code injection but rather credential misuse resulting from poor deployment hygiene.
 
+
+This lab demonstrates the importance of:
+- Removing development artifacts before production deployment
+- Protecting credentials
+- Enforcing secure configuration management
+- Maintaining centralized monitoring for early detection
+
+
 ## Author
 Durga Sai Sri Ramireddy </br>
 Master’s Student - Cybersecurity </br>
@@ -144,9 +152,3 @@ University of Houston
 
 
 *This project was developed as part of academic coursework and expanded for cybersecurity portfolio demonstration.*
-
-This lab demonstrates the importance of:
-- Removing development artifacts before production deployment
-- Protecting credentials
-- Enforcing secure configuration management
-- Maintaining centralized monitoring for early detection
