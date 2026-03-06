@@ -56,11 +56,11 @@ To determine:
 **Network Activity Summary**
 | Time (UTC)  | Source IP      | Destination IP | Event                                     | Observation                             |
 | ----------- | -------------- | -------------- | ----------------------------------------- | --------------------------------------- |
-| 14:45:09    | 192.168.36.172 | 192.168.36.204 | GET /admin.html                           | Recon attempt                           |
-| 14:48:18    | 192.168.36.172 | 192.168.36.204 | GET /cgi-bin/pub/pki?cmd=serverInfo (404) | CGI probing                             |
-| 14:49:31    | 192.168.36.172 | 192.168.36.204 | GET /apex/listenerConfigure               | Continued scanning                      |
-| 14:50:05    | 192.168.36.172 | 192.168.36.204 | GET /debug/deletethis.html                | Credential exposure                     |
-| 14:51–14:53 | 192.168.36.198 | 192.168.36.204 | HTTP & SSH (80/22)                        | Attack window (SSH session established) |
+| 14:45:09    | 192.168.xx.xx | 192.168.xx.xxx | GET /admin.html                           | Recon attempt                           |
+| 14:48:18    | 192.168.xx.xxx | 192.168.xx.xxx | GET /cgi-bin/pub/pki?cmd=serverInfo (404) | CGI probing                             |
+| 14:49:31    | 192.168.xx.xxx | 192.168.xx.xxx | GET /apex/listenerConfigure               | Continued scanning                      |
+| 14:50:05    | 192.168.xx.xxx | 192.168.xx.xxx| GET /debug/deletethis.html                | Credential exposure                     |
+| 14:51–14:53 | 192.168.xx.xxx| 192.168.xx.xxx | HTTP & SSH (80/22)                        | Attack window (SSH session established) |
 
 ## File System Analysis
 After extracting Lab2webdirectory.tar.gz, the web root contained:
@@ -83,9 +83,9 @@ This file exposed internal login credentials and was likely intended for removal
 ## Indicators of Compromise (IOCs)
 | Type               | Indicator                                                                      |
 | ------------------ | ------------------------------------------------------------------------------ |
-| Attacker IP        | 192.168.36.198                                                                 |
-| Recon IP           | 192.168.36.172                                                                 |
-| Target IP          | 192.168.36.204                                                                 |
+| Attacker IP        | 192.168.xx.xxx                                                                 |
+| Recon IP           | 192.168.xx.xxx                                                                 |
+| Target IP          | 192.168.xx.xxx                                                               |
 | Suspicious URLs    | /admin.html, /cgi-bin/pub/pki, /apex/listenerConfigure, /debug/deletethis.html |
 | Leaked Credentials | webserver : toor                                                               |
 | Affected Ports     | 80 (HTTP), 22 (SSH)                                                            |
