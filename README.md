@@ -132,6 +132,13 @@ Specifically:
 - Implement centralized logging and SIEM monitoring.
 - Enforce secure configuration management practices.
 
+## Skills Demonstrated
+- Network Traffic Analysis
+- SIEM Analysis (ELK Stack)
+- Threat Hunting & Log Investigation
+- Web Application Attack Analysis
+- Indicators of Compromise (IOC) Identification
+
 ## Conclusion
 The investigation confirmed that attacker IP 192.168.36.198 exploited an exposed debug file containing valid SSH credentials.
 
